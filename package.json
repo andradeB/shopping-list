@@ -1,7 +1,7 @@
 {
   "name": "shopping-list",
   "description": "Shopping list with payment split",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "ISC",
   "author": {
     "name": "Bruno de Andrade Dias",
@@ -22,7 +22,7 @@
     "dist/"
   ],
   "scripts": {
-    "release": "run-script build && standard-version",
+    "release": "run-script jest && run-script build && standard-version",
     "test": "run-script eslint && run-script tsc --noEmit && run-script jest",
     "clean": "del-cli dist dist coverage && jest --clearCache",
     "build": "run-script clean && run-script build:js && run-script build:d.ts && run-script build:cleanup",
