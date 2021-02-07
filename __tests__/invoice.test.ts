@@ -1,5 +1,5 @@
-import { Product } from '../Product';
-import { Invoice } from "../Invoice";
+import { Product } from '../src/Product';
+import { Invoice } from "../src/Invoice";
 import { listGenerator } from "./helpers";
 
 describe('Testing repeating decimals', () => {

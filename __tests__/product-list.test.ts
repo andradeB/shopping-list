@@ -1,5 +1,5 @@
-import { Product } from '../Product';
-import { ProductList } from '../ProductList';
+import { Product } from '../src/Product';
+import { ProductList } from '../src/ProductList';
 
 describe('Testing ProductList Class', () => {
   const pen = new Product('Pen', 2, 2.54);

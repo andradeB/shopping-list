@@ -1,4 +1,4 @@
-import { Product } from '../Product';
+import { Product } from '../src/Product';
 
 describe('Testing Product Class', () => {
   const PRICE = 2.54;

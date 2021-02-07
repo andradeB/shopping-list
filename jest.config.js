@@ -34,7 +34,7 @@ module.exports = {
   // moduleNameMapper: {},
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ['<rootDir>/src/**/test.{js,jsx,ts,tsx}', '<rootDir>/src/**/*.test.{js,jsx,ts,tsx}'],
+  testMatch: ['<rootDir>/**/test.{js,jsx,ts,tsx}', '<rootDir>/**/*.test.{js,jsx,ts,tsx}'],
 
   // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
   // testURL: "http://localhost",
