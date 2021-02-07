@@ -20,19 +20,16 @@
   "module": "lib/index.js",
   "files": [
     "README.md",
-    "css/",
     "dist/",
-    "lib-commonjs/",
-    "lib/",
-    "scss/"
+    "lib/"
   ],
   "scripts": {
+    "release": "run-script build && standard-version",
     "test": "run-script eslint && run-script tsc --noEmit && run-script jest",
-    "clean": "del-cli lib lib-commonjs dist css coverage && jest --clearCache",
-    "build": "run-script clean && run-script build:js && run-script build:commonjs && run-script build:d.ts && run-script build:cleanup",
+    "clean": "del-cli lib dist coverage && jest --clearCache",
+    "build": "run-script clean && run-script build:js && run-script build:d.ts && run-script build:cleanup",
     "build:cleanup": "del-cli \"lib?(-*)/**/@(__demo__|__snapshots__|?(*.)test.@(ts|tsx|js|jsx))\"",
-    "build:commonjs": "cross-env NODE_ENV=production BABEL_MODULES=cjs babel src --out-dir lib-commonjs --extensions .ts,.tsx,.js,.jsx --copy-files --source-maps",
-    "build:d.ts": "run-script tsc --emitDeclarationOnly && run-script tsc --emitDeclarationOnly --outDir lib-commonjs",
+    "build:d.ts": "run-script tsc --emitDeclarationOnly",
     "build:js": "cross-env NODE_ENV=production BABEL_MODULES=false babel src --out-dir lib --extensions .ts,.tsx,.js,.jsx --copy-files --source-maps",
     "eslint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --ignore-pattern \"/__demo__/\" --no-error-on-unmatched-pattern",
     "jest": "cross-env NODE_ENV=test jest --passWithNoTests",
@@ -65,6 +62,7 @@
     "eslint-plugin-react": "^7.22.0",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
+    "standard-version": "^9.1.0",
     "typescript": "^4.1.3"
   },
   "dependencies": {
