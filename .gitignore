@@ -6,4 +6,5 @@ dist/
 css/
 coverage/
 .vscode/
+.idea/
 .DS_Store
