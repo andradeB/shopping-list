@@ -1,17 +1,15 @@
 {
   "compilerOptions": {
-    "skipLibCheck": true,
+    "module": "ES6",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "strict": true,
     "noImplicitReturns": true,
-    "esModuleInterop": true,
     "experimentalDecorators": true,
-    "jsx": "preserve",
-    "target": "esnext",
+    "target": "es2015",
     "declaration": true,
-    "outDir": "lib",
-    "rootDir": "src"
+    "outDir": "dist",
+    "rootDir": "src",
   },
   "exclude": ["**/*.test.tsx", "**/*.test.ts", "**/test.tsx", "**/test.ts", "__tests__"],
   "include": ["src/**/*.tsx", "src/**/*.ts"]
