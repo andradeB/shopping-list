@@ -22,7 +22,8 @@
     "dist/"
   ],
   "scripts": {
-    "release": "run-script jest && run-script build && standard-version",
+    "prerelease": "yarn build",
+    "release": "git add ./dist ./types && run-script jest && run-script build && standard-version",
     "test": "run-script eslint && run-script tsc --noEmit && run-script jest",
     "clean": "del-cli dist dist coverage && jest --clearCache",
     "build": "run-script clean && run-script build:js && run-script build:d.ts && run-script build:cleanup",

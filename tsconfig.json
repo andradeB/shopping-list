@@ -6,11 +6,12 @@
     "strict": true,
     "noImplicitReturns": true,
     "experimentalDecorators": true,
+    "declarationDir": "types",
     "target": "es2015",
     "declaration": true,
     "outDir": "dist",
     "rootDir": "src",
   },
-  "exclude": ["**/*.test.tsx", "**/*.test.ts", "**/test.tsx", "**/test.ts", "__tests__"],
+  "exclude": ["**/*.test.tsx", "**/*.test.ts", "**/test.tsx", "**/test.ts", "__tests__", "types"],
   "include": ["src/**/*.tsx", "src/**/*.ts"]
 }
