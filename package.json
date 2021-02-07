@@ -1,0 +1,65 @@
+{
+  "name": "shopping-list",
+  "description": "Shopping list with payment split",
+  "version": "0.1.0",
+  "license": "ISC",
+  "author": {
+    "name": "Bruno de Andrade Dias",
+    "email": "andradedias.bruno@Hotmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:andradeB/shopping-list.git"
+  },
+  "main": "lib-commonjs/index.js",
+  "module": "lib/index.js",
+  "files": [
+    "README.md",
+    "css/",
+    "dist/",
+    "lib-commonjs/",
+    "lib/",
+    "scss/"
+  ],
+  "scripts": {
+    "test": "run-script eslint && run-script tsc --noEmit && run-script jest",
+    "clean": "del-cli lib lib-commonjs dist css coverage && jest --clearCache",
+    "build": "run-script clean && run-script build:js && run-script build:commonjs && run-script build:d.ts && run-script build:cleanup",
+    "build:cleanup": "del-cli \"lib?(-*)/**/@(__demo__|__snapshots__|?(*.)test.@(ts|tsx|js|jsx))\"",
+    "build:commonjs": "cross-env NODE_ENV=production BABEL_MODULES=cjs babel src --out-dir lib-commonjs --extensions .ts,.tsx,.js,.jsx --copy-files --source-maps",
+    "build:d.ts": "run-script tsc --emitDeclarationOnly && run-script tsc --emitDeclarationOnly --outDir lib-commonjs",
+    "build:js": "cross-env NODE_ENV=production BABEL_MODULES=false babel src --out-dir lib --extensions .ts,.tsx,.js,.jsx --copy-files --source-maps",
+    "eslint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --ignore-pattern \"/__demo__/\" --no-error-on-unmatched-pattern",
+    "jest": "cross-env NODE_ENV=test jest --passWithNoTests",
+    "prepack": "run-script build",
+    "reformat": "run-script eslint --fix --quiet",
+    "tsc": "tsc"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/generator": "^7.12.13",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
+    "@babel/plugin-proposal-decorators": "^7.12.13",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.13",
+    "@babel/plugin-transform-typescript": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.25",
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/parser": "^4.14.2",
+    "@xornot/run-script": "^0.1.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-const-enum": "^1.0.1",
+    "cross-env": "^7.0.3",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  }
+}
